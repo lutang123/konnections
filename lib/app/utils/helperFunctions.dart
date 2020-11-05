@@ -38,7 +38,6 @@ class HelperFunctions {
       bool _result = await launch(url).catchError((dynamic onError) {
         platformAlertDialog(onError).show(context);
       });
-      print('_result in launch email: $_result');
       if (_result == false) {
         platformAlertDialogFail().show(context);
       }
