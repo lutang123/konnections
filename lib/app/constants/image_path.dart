@@ -1,3 +1,3 @@
 class ImagePath {
-  static String signInImage = 'assets/images/cloud.jpg';
+  static String signInImage = 'assets/images/city.jpg';
 }

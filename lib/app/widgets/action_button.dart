@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:konnections/app/utils/helperFunctions.dart';
+import 'package:konnections/app/widgets/platform_alert_dialog.dart';
 
 class PhoneButton extends StatelessWidget {
   const PhoneButton({Key key, @required this.phoneNumber}) : super(key: key);
@@ -10,17 +11,19 @@ class PhoneButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(Icons.phone, color: Theme.of(context).buttonColor),
-      onPressed: onPhoneButtonPressed(context),
+      onPressed: () => onPhoneButtonPressed(context),
     );
   }
 
-  Function onPhoneButtonPressed(BuildContext context) {
+  void onPhoneButtonPressed(BuildContext context) {
     if (phoneNumber != null) {
-      return () {
-        HelperFunctions.callNumber(context, phoneNumber);
-      };
+      HelperFunctions.callNumber(context, phoneNumber);
     } else {
-      return null;
+      PlatformAlertDialog(
+        title: "Error",
+        content: 'Phone number is empty',
+        defaultActionText: 'OK',
+      ).show(context);
     }
   }
 }
@@ -34,17 +37,19 @@ class SmsButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(Icons.message, color: Theme.of(context).buttonColor),
-      onPressed: onSmsButtonPressed(context),
+      onPressed: () => onSmsButtonPressed(context),
     );
   }
 
-  Function onSmsButtonPressed(BuildContext context) {
+  void onSmsButtonPressed(BuildContext context) {
     if (phoneNumber != null) {
-      return () {
-        HelperFunctions.messagingDialog(context, phoneNumber);
-      };
+      HelperFunctions.messagingDialog(context, phoneNumber);
     } else {
-      return null;
+      PlatformAlertDialog(
+        title: "Error",
+        content: 'Phone number is empty',
+        defaultActionText: 'OK',
+      ).show(context);
     }
   }
 }
@@ -57,17 +62,19 @@ class EmailButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(Icons.email_outlined, color: Theme.of(context).buttonColor),
-      onPressed: onSmsButtonPressed(context),
+      onPressed: () => onEmailButtonPressed(context, email),
     );
   }
 
-  Function onSmsButtonPressed(BuildContext context) {
+  void onEmailButtonPressed(BuildContext context, String email) {
     if (email != null) {
-      return () {
-        HelperFunctions.messagingDialog(context, email);
-      };
+      HelperFunctions.launchEmail(context, email);
     } else {
-      return null;
+      PlatformAlertDialog(
+        title: "Error",
+        content: 'Email address is empty',
+        defaultActionText: 'OK',
+      ).show(context);
     }
   }
 }

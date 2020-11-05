@@ -251,7 +251,6 @@ class _ContactDetailScreenState extends State<ContactDetailScreen> {
     if (_validateAndSaveForm()) {
       try {
         final id = myContact?.id ?? documentIdFromCurrentDate();
-
         final newContact = MyContact(
           id: id,
           displayName: '${givenName ?? ""} ${familyName ?? ""}',
@@ -260,7 +259,6 @@ class _ContactDetailScreenState extends State<ContactDetailScreen> {
           phoneNumber: phoneNumber ?? '',
           email: email ?? '',
         );
-        //add newTodo to database
         await database.setContact(newContact);
       } on PlatformException catch (e) {
         PlatformExceptionAlertDialog(
@@ -268,7 +266,6 @@ class _ContactDetailScreenState extends State<ContactDetailScreen> {
           exception: e,
         ).show(context);
       }
-      Navigator.of(context).pop();
     }
   }
 }

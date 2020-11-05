@@ -60,19 +60,17 @@ class SearchResultState extends State<SearchResult> {
               );
             } else {
               return Center(
-                  child: MyContainerWithDarkMode(
-                      child: Text(
+                  child: Text(
                 'No contacts available, please add new contact.',
                 style: Theme.of(context).textTheme.bodyText1,
-              )));
+              ));
             }
           } else if (snapshot.hasError) {
             return Center(
-                child: MyContainerWithDarkMode(
-                    child: Text(
+                child: Text(
               'Operation failed, please try again later.',
               style: Theme.of(context).textTheme.bodyText1,
-            )));
+            ));
           }
           return Center(child: CircularProgressIndicator());
         });
