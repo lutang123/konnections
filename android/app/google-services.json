@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "573832151576",
+    "firebase_url": "https://konnections-f4a02.firebaseio.com",
+    "project_id": "konnections-f4a02",
+    "storage_bucket": "konnections-f4a02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573832151576:android:830b428fb240e6c28a796d",
+        "android_client_info": {
+          "package_name": "com.lu.konnections"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573832151576-be2tp1ksd5k71kmlp8m31ohp16o7sqs0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lu.konnections",
+            "certificate_hash": "6ded2f1c0980ecb98dc148444d7a61d0016dba7a"
+          }
+        },
+        {
+          "client_id": "573832151576-ca08092b660u410qromjrs64h05pm9gb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZVQadqsUQHOCtVCXXMjMatYXnZL_2cB4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573832151576-ca08092b660u410qromjrs64h05pm9gb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
